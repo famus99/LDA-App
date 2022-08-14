@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'bootstrap.min.css')}}" media="screen">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'Banner-Heading-Image.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'styles.css')}}">         
+</head>
+<body style="transform: translateX(123px);">
+    <header></header>
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+        <div class="container-fluid"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><a class="navbar-brand fs-4 fw-light link-dark" href="home.html" target="_top"></a>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link fs-4 fw-light link-dark active" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fs-4 fw-light" href="/Instruction">Instruction</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link fs-4 fw-light" href="/Output">Output</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <p class="fs-5 fw-light text-white"><br><span style="color: rgb(255, 255, 255);">1* new Here you can submit the csv file or xls file with the customer data set</span><br></p>
+        <p class="fs-5 fw-light text-white" style="transform: translateY(6px);"><span style="color: rgb(255, 255, 255);">2* Using the dropdown menu select the column of your data that corresponds to the customer ID</span><br></p>
+<select id="year">columnvalues</select>
+<script>
+ //name = ['Joe','John','Jim','Paul','Niall','Tom']
+
+ var selectvalue = document.getElementById("year");
+ var test = {{Variable|tojson}};
+    //The increment operator (++) increments (adds one to) its operand and returns a value.
+    for(var i = 0; i < test.length; i++) // This line checks for the length of the data you feeding in i.e the no of items
+         {
+            var selection = document.createElement("OPTION"), // This line creates a variable to store the different values fed in from the JSON object "TEST"
+            txt = document.createTextNode(test[i]); // This just reads each value from the test JSON variable above
+            selection.appendChild(txt); // This line appends each value as it is read.
+            selection.setAttribute("value",test[i]); // This line sets each value read in as a value for the drop down
+            selectvalue.insertBefore(selection,selectvalue.lastChild);
+          } //This reads eah value into the dropdown based on the order in the "TEST" above.
+</script>
+
+<p class="fs-5 fw-light text-white" style="transform: translateY(6px);">3* Using the dropdown menu select the column of your data that corresponds to the time<br></p>
+<select id="year1">columnvalues</select>
+<script>
+  //name = ['Joe','John','Jim','Paul','Niall','Tom']
+
+ var selectvalue = document.getElementById("year1");
+ var test = {{Variable|tojson}};
+    //The increment operator (++) increments (adds one to) its operand and returns a value.
+    for(var i = 0; i < test.length; i++) // This line checks for the length of the data you feeding in i.e the no of items
+         {
+            var selection = document.createElement("OPTION"), // This line creates a variable to store the different values fed in from the JSON object "TEST"
+            txt = document.createTextNode(test[i]); // This just reads each value from the test JSON variable above
+            selection.appendChild(txt); // This line appends each value as it is read.
+            selection.setAttribute("value",test[i]); // This line sets each value read in as a value for the drop down
+            selectvalue.insertBefore(selection,selectvalue.lastChild);
+          } //This reads eah value into the dropdown based on the order in the "TEST" above.
+</script>
+
+<p class="fs-5 fw-light text-white" style="transform: translateY(6px);"><span style="color: rgb(255, 255, 255);">4* Using the dropdown menu select the column of your data that corresponds to the count</span><br></p>
+<select id="year2">columnvalues</select>
+<script>
+  //name = ['Joe','John','Jim','Paul','Niall','Tom']
+
+ var selectvalue = document.getElementById("year2");
+ var test = {{Variable|tojson}};
+    //The increment operator (++) increments (adds one to) its operand and returns a value.
+    for(var i = 0; i < test.length; i++) // This line checks for the length of the data you feeding in i.e the no of items
+         {
+            var selection = document.createElement("OPTION"), // This line creates a variable to store the different values fed in from the JSON object "TEST"
+            txt = document.createTextNode(test[i]); // This just reads each value from the test JSON variable above
+            selection.appendChild(txt); // This line appends each value as it is read.
+            selection.setAttribute("value",test[i]); // This line sets each value read in as a value for the drop down
+            selectvalue.insertBefore(selection,selectvalue.lastChild);
+          } //This reads eah value into the dropdown based on the order in the "TEST" above.
+</script>
+
+<p class="fs-5 fw-light text-white">5* Enter the time metric you will be using e.g. hours, days, weeks, months, years.</p>
+<select id="year3">columnvalues</select>
+<script>
+  var select = document.getElementById("year3"); 
+  var options = ["hours", "days", "weeks", "months", "years"]; 
+
+  // Optional: Clear all existing options first:
+  select.innerHTML = "";
+  // Populate list with options:
+  for(var i = 0; i < options.length; i++) {
+      var opt = options[i];
+      select.innerHTML += "<option value=\"" + opt + "\">" + opt + "</option>";
+  }
+</script>
+
+<p class="fs-5 fw-light text-white">6* Here you can input the number of categories you want your data to be split into using the add button.</p>
+<form>
+  <p class = "fs-5 fw-light text-white">num:</p> <input type="number" name="a" id="num"><br></br>
+</form>
+<br></br>
+<button type = "submit" onclick='myfunction();'>submit</button>
+<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script>
+  function myfunction(){
+    const customer_ID = document.getElementById("year").value;
+    const time = document.getElementById("year1").value;
+    const count = document.getElementById("year2").value;
+    const timeframe = document.getElementById("year3").value;
+    const category_number = document.getElementById("num").value;
+    dict_values = {customer_ID,time,count,timeframe,category_number}
+    const s = JSON.stringify(dict_values);
+    $.ajax({
+      url:"/test",
+      type:"POST",
+      contentType:"application/json",
+      data: JSON.stringify(s)
+    })
+   
+  }
+  ;
+</script>
+
+<div class="my-3"><a class="btn btn-primary btn-lg bg-warning border rounded-pill border-warning me-2" role="button" href="/Output" style="transform: translateX(288px);">Output</a></div>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<br></br>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Designed by CodingLab | www.codinglabweb.com-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'output.css')}}">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'bootstrap.min.css')}}" media="screen">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'Banner-Heading-Image.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'styles.css')}}"> 
+   </head>
+<body>
+    <header></header>
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+        <div class="container-fluid"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><a class="navbar-brand fs-4 fw-light link-dark" href="home.html" target="_top"></a>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link fs-4 fw-light" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fs-4 fw-light link-dark active" href="/Submit">Submit</a></li>
+                    <li class="nav-item"><a class="nav-link fs-4 fw-light" href="/Instruction">Instruction</a></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  <a href = "{{url_for('static', filename = '/files/output.csv')}}" download>
+    <div class="button">
+        <div class="content">
+          <i class="bx bx-cloud-download"></i>
+          <span class="button-text">Download</span>
+        </div>
+    </div>
+  </a>
+ 
+  
+  <script>
+    const button = document.querySelector(".button");
+    button.addEventListener("click", () =>{
+      button.classList.add("active");
+      setTimeout(()=>{
+        button.classList.remove("active");
+        button.querySelector("i").classList.replace("bx-cloud-download", "bx-check-circle")
+        button.querySelector("span").innerText = "Completed";
+      },500);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("Web_Photo_Editor%20(1).jpg");
+}
+
+header {
+}
+
+.container {
+  height: 100%;
+  max-width: 960px;
+}
+
+h1 {
+  font-size: larger;
+}
+
+section {
+  transform: perspective(0px) translate(29px);
+}
+
