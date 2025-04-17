@@ -1,7 +1,7 @@
 # Customer Analysis Tool
 
 ## Overview
-The Customer Analysis Tool is a Flask-based web application for analysing customer purchasing behaviour and categorising customers based on their activity patterns. It uses Latent Dirichlet Allocation (LDA) for topic modelling to identify distinct customer segments based on temporal purchasing patterns.
+The Customer Analysis Tool is a Flask-based web application for analysing customer purchasing behaviour and categorising customers based on their activity patterns. It uses Latent Dirichlet Allocation (LDA) for topic modelling to identify distinct customer segments based on temporal purchasing patternz.
 
 ## Features
 - **File Upload**: Upload CSV files containing customer purchase data
